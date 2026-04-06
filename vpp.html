@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Văn phòng phẩm - Thịnh Phát</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-scroll">
+      <span>&#9679; Văn phòng phẩm chính hãng - Giao hàng nhanh TP.HCM</span>
+      <span>&#9679; Giấy in A4, bút viết, bảng trắng, khăn gối văn phòng</span>
+      <span>&#9679; Hotline: <span id="topbar-phone">0909 123 456</span> - Hỗ trợ 24/7</span>
+      <span>&#9679; Miễn phí giao hàng cho đơn từ 200.000đ</span>
+      <span>&#9679; Văn phòng phẩm chính hãng - Giao hàng nhanh TP.HCM</span>
+      <span>&#9679; Giấy in A4, bút viết, bảng trắng, khăn gối văn phòng</span>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="logo">
+        <span class="logo-main">Thịnh</span><span class="logo-red">Phát</span><span class="logo-dot-red">.</span>
+      </a>
+
+      <div class="search-box">
+        <svg class="search-icon" width="15" height="15" fill="none" stroke="#999" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm văn phòng phẩm..." oninput="handleVppSearch(this.value)" />
+        <button class="search-submit">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+      </div>
+
+      <div class="header-right">
+        <a href="tel:0909123456" class="hdr-btn hdr-phone" id="hdr-phone-link">
+          <div class="hdr-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <span id="hdr-phone-text">0909 123 456</span>
+        </a>
+        <a href="#cart" class="hdr-btn" id="cartBtn">
+          <div class="hdr-icon">
+            <svg width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <span class="hdr-badge" id="cartCount">0</span>
+          </div>
+          <span>Giỏ hàng</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- CATEGORY NAV -->
+  <nav class="cat-nav">
+    <div class="cat-nav-inner">
+      <a href="index.html"    class="cat-link">Trang chủ</a>
+      <a href="thue-may.html" class="cat-link">Cho thuê máy</a>
+      <a href="sua-chua.html" class="cat-link">Sửa chữa &amp; Thay mực</a>
+      <a href="vpp.html"      class="cat-link active">Văn phòng phẩm</a>
+      <a href="lien-he.html" class="cat-link">Liên hệ</a>
+    </div>
+  </nav>
+
+  <!-- VPP PAGE HERO -->
+  <div class="vpp-hero">
+    <div class="vpp-hero-inner">
+      <nav class="vpp-breadcrumb" aria-label="breadcrumb">
+        <a href="index.html">Trang chủ</a>
+        <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        <span>Văn phòng phẩm</span>
+      </nav>
+      <h1 class="vpp-hero-title">Văn phòng phẩm</h1>
+      <p class="vpp-hero-sub">Giấy in &middot; Bút viết &middot; Bảng trắng &middot; Khăn &amp; Gối văn phòng &mdash; Giao hàng nhanh TP.HCM</p>
+    </div>
+  </div>
+
+  <!-- MAIN: SIDEBAR + GRID -->
+  <div class="vpp-wrap">
+
+    <!-- Mobile overlay -->
+    <div class="vpp-sidebar-overlay" id="vppSidebarOverlay" onclick="toggleVppSidebar()"></div>
+
+    <div class="vpp-layout">
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="vpp-sidebar" id="vppSidebar">
+
+        <div class="vpp-sidebar-header">
+          <span>&#9776; Bộ lọc</span>
+          <button class="vpp-sidebar-close" onclick="toggleVppSidebar()" aria-label="Đóng bộ lọc">&#10005;</button>
+        </div>
+
+        <!-- Danh mục -->
+        <div class="vpp-sidebar-section">
+          <h3 class="vpp-sidebar-title">Danh mục</h3>
+          <button class="vpp-cat-btn active" data-cat="all"     onclick="vppSetCat('all', this)">Tất cả văn phòng phẩm</button>
+          <button class="vpp-cat-btn"        data-cat="giay"    onclick="vppSetCat('giay', this)">
+            <span class="vpp-cat-icon">&#128196;</span> Giấy &amp; Bút
+          </button>
+          <button class="vpp-cat-btn"        data-cat="khan"    onclick="vppSetCat('khan', this)">
+            <span class="vpp-cat-icon">&#129529;</span> Khăn &amp; Gối
+          </button>
+          <button class="vpp-cat-btn"        data-cat="bang"    onclick="vppSetCat('bang', this)">
+            <span class="vpp-cat-icon">&#128203;</span> Bảng &amp; File
+          </button>
+        </div>
+
+        <!-- Khoảng giá -->
+        <div class="vpp-sidebar-section">
+          <h3 class="vpp-sidebar-title">Khoảng giá</h3>
+          <button class="vpp-price-btn active" onclick="vppSetPrice(0, Infinity, this)">Tất cả mức giá</button>
+          <button class="vpp-price-btn"        onclick="vppSetPrice(0, 50000, this)">Dưới 50.000đ</button>
+          <button class="vpp-price-btn"        onclick="vppSetPrice(50000, 100000, this)">50.000đ – 100.000đ</button>
+          <button class="vpp-price-btn"        onclick="vppSetPrice(100000, 200000, this)">100.000đ – 200.000đ</button>
+          <button class="vpp-price-btn"        onclick="vppSetPrice(200000, Infinity, this)">Trên 200.000đ</button>
+        </div>
+
+        <!-- Sắp xếp -->
+        <div class="vpp-sidebar-section">
+          <h3 class="vpp-sidebar-title">Sắp xếp theo</h3>
+          <select class="vpp-sort-select" id="vppSort" onchange="vppApplyFilters()">
+            <option value="default">Mặc định</option>
+            <option value="price-asc">Giá: Thấp &#8594; Cao</option>
+            <option value="price-desc">Giá: Cao &#8594; Thấp</option>
+            <option value="name">Tên A &#8594; Z</option>
+          </select>
+        </div>
+
+      </aside>
+
+      <!-- ── MAIN PRODUCT AREA ── -->
+      <main class="vpp-main">
+
+        <div class="vpp-toolbar">
+          <p class="vpp-result-count" id="vppCount">Đang tải...</p>
+          <button class="vpp-filter-toggle" onclick="toggleVppSidebar()">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/>
+            </svg>
+            Lọc &amp; Sắp xếp
+          </button>
+        </div>
+
+        <div class="vpp-grid" id="vppGrid">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="no-products" id="vppNoProducts" style="display:none">
+          <p>Không tìm thấy sản phẩm phù hợp. <a href="javascript:void(0)" onclick="vppReset()">Xoá bộ lọc</a></p>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-inner">
+        <div class="footer-col col-brand">
+          <div class="footer-logo">Thịnh<span>Phát</span>.</div>
+          <p>Chuyên cho thuê máy photocopy,<br>sửa chữa thay mực và cung cấp<br>văn phòng phẩm TP. Hồ Chí Minh.</p>
+          <p class="footer-hotline">&#128222; <span id="footer-phone-num">0909 123 456</span></p>
+        </div>
+        <div class="footer-col">
+          <strong>Dịch vụ</strong>
+          <a href="index.html#services">Cho thuê máy photocopy</a>
+          <a href="index.html#services">Sửa chữa máy photo</a>
+          <a href="index.html#services">Thay mực hộp mực</a>
+          <a href="vpp.html">Văn phòng phẩm</a>
+        </div>
+        <div class="footer-col">
+          <strong>Văn phòng phẩm</strong>
+          <a href="vpp.html">Tất cả sản phẩm</a>
+          <a href="vpp.html?cat=giay">Giấy &amp; Bút</a>
+          <a href="vpp.html?cat=khan">Khăn &amp; Gối</a>
+          <a href="vpp.html?cat=bang">Bảng &amp; File</a>
+        </div>
+        <div class="footer-col">
+          <strong>Hỗ trợ</strong>
+          <a href="lien-he.html">Liên hệ tư vấn</a>
+          <a href="lien-he.html">Chính sách bảo hành</a>
+          <a href="lien-he.html">Hướng dẫn đặt hàng</a>
+        </div>
+      </div>
+    </div>
+    <!-- CONTACT INFO STRIP -->
+    <div class="footer-contact">
+      <div class="footer-contact-inner">
+        <div class="footer-contact-item">
+          <span class="fci-icon">&#128205;</span>
+          <div class="fci-text">
+            <p class="fci-label">Địa chỉ văn phòng</p>
+            <p class="fci-value">123 Nguyễn Văn Linh, P. Tân Phong, Q. 7, TP. Hồ Chí Minh</p>
+          </div>
+        </div>
+        <div class="fci-divider"></div>
+        <div class="footer-contact-item">
+          <span class="fci-icon">&#128222;</span>
+          <div class="fci-text">
+            <p class="fci-label">Hotline hỗ trợ 24/7</p>
+            <p class="fci-value"><a href="tel:0909123456" id="footer-cta-phone">0909 123 456</a></p>
+          </div>
+        </div>
+        <div class="fci-divider"></div>
+        <div class="footer-contact-item">
+          <span class="fci-icon">&#9993;</span>
+          <div class="fci-text">
+            <p class="fci-label">Email</p>
+            <p class="fci-value"><a href="mailto:info@thinhphat.vn">info@thinhphat.vn</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Công ty TNHH Thịnh Phát &nbsp;|&nbsp; MST: 0312345678 &nbsp;|&nbsp; All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- CART DRAWER -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCartIfOutside(event)">
+    <div class="cart-drawer" id="cartDrawer">
+      <div class="cart-header">
+        <h3>Giỏ hàng</h3>
+        <button onclick="toggleCart()">&#10005;</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="cart-empty">Giỏ hàng trống.</p>
+      </div>
+      <div class="cart-footer" id="cartFooter" style="display:none">
+        <div class="cart-total">Tổng: <strong id="cartTotal">0đ</strong></div>
+        <button class="btn-submit" onclick="openCheckout()">Đặt hàng ngay &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== CHECKOUT MODAL ===================== -->
+  <div class="checkout-overlay" id="checkoutOverlay" onclick="closeCheckoutIfOutside(event)">
+    <div class="checkout-modal" id="checkoutModal">
+
+      <div class="checkout-header">
+        <div>
+          <p class="checkout-step-label">Bước cuối cùng</p>
+          <h3>Xác nhận đặt hàng</h3>
+        </div>
+        <button class="checkout-close" onclick="closeCheckout()" aria-label="Đóng">&#10005;</button>
+      </div>
+
+      <div id="checkoutSummary"></div>
+
+      <form class="checkout-form" id="checkoutForm" onsubmit="submitOrder(event)" novalidate>
+        <p class="checkout-form-title">Thông tin nhận hàng</p>
+
+        <div class="form-group">
+          <label for="co-name">Họ và tên <span class="lh-req">*</span></label>
+          <input type="text" id="co-name" placeholder="Nguyễn Văn A" autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="co-phone">Số điện thoại <span class="lh-req">*</span></label>
+          <input type="tel" id="co-phone" placeholder="0909 123 456" autocomplete="tel" />
+        </div>
+
+        <div class="form-group">
+          <label for="co-address">Địa chỉ giao hàng</label>
+          <input type="text" id="co-address" placeholder="Số nhà, tên đường, phường, quận..." autocomplete="street-address" />
+        </div>
+
+        <div class="form-group">
+          <label for="co-note">Ghi chú <span style="color:var(--gray-4);font-weight:400;font-size:11px;text-transform:none">(tùy chọn)</span></label>
+          <textarea id="co-note" placeholder="Thời gian giao hàng, yêu cầu đặc biệt..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit checkout-btn-submit">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:5px;margin-bottom:1px"><polyline points="20 6 9 17 4 12"/></svg>
+          Xác nhận đặt hàng
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- FLOATING CONTACT -->
+  <div class="float-contact">
+    <a id="float-zalo" href="https://zalo.me/0909123456" target="_blank" rel="noopener" class="float-btn float-zalo">
+      <svg width="22" height="22" viewBox="0 0 40 40" fill="white" xmlns="http://www.w3.org/2000/svg"><text x="4" y="30" font-size="30" font-family="Arial" font-weight="900">Z</text></svg>
+      <span class="float-label">Chat Zalo</span>
+    </a>
+    <a id="float-hotline" href="tel:0909123456" class="float-btn float-hotline">
+      <svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </a>
+  </div>
+
+  <script>
+  // ===================== SHARED DATA (đồng bộ với index.html qua localStorage) =====================
+  const DEFAULT_PRODUCTS = [
+    { id:1,  name:"Giấy A4 Double A 70gsm (500 tờ/ream)",    cat:"giay", price:88000,  oldPrice:95000,  unit:"ream", brand:"Double A",   desc:"Giấy in photo chất lượng cao, trắng mịn, không kem vàng" },
+    { id:2,  name:"Bút bi Thiên Long TL-027 (hộp 20 cái)",  cat:"giay", price:42000,  oldPrice:50000,  unit:"hộp",  brand:"Thiên Long", desc:"Bút viết tròn, mực xanh/đỏ/đen, ngòi bút bền bỉ" },
+    { id:3,  name:"Bút đa màu Artline (12 màu)",             cat:"giay", price:65000,  oldPrice:null,   unit:"hộp",  brand:"Artline",    desc:"Màu sắc tươi sáng, không lem, bền màu" },
+    { id:4,  name:"Khăn giấy Paseo (gói 10 gói nhỏ)",       cat:"khan", price:28000,  oldPrice:32000,  unit:"gói",  brand:"Paseo",      desc:"Khăn giấy mềm, 2 lớp, không xơ, an toàn cho da nhạy cảm" },
+    { id:5,  name:"Gối tựa lưng văn phòng (có điều chỉnh)", cat:"khan", price:120000, oldPrice:150000, unit:"cái",  brand:"Thịnh Phát", desc:"Gối tựa lưng bọc vải lưới thoáng khí, giảm đau lưng khi ngồi lâu" },
+    { id:6,  name:"Bảng trắng từ nam châm 1.2x0.8m",        cat:"bang", price:380000, oldPrice:450000, unit:"cái",  brand:"Thịnh Phát", desc:"Bảng trắng khung nhôm, bề mặt từ, kèm 2 bút lông + 1 nam châm" },
+    { id:7,  name:"Chia file nhựa A4 (hộp 100 cái)",        cat:"bang", price:35000,  oldPrice:null,   unit:"hộp",  brand:"Deli",       desc:"Chia file nhựa trong, dày 0.1mm, dùng cho A4" },
+    { id:8,  name:"Binder clip 32mm (hộp 12 cái)",          cat:"bang", price:12000,  oldPrice:null,   unit:"hộp",  brand:"Deli",       desc:"Kẹp bằng thép không rỉ, kẹp được 150 tờ giấy" },
+    { id:9,  name:"Giấy A3 Papermix 80gsm (500 tờ)",        cat:"giay", price:165000, oldPrice:185000, unit:"ream", brand:"Papermix",   desc:"Giấy A3 cao cấp, dùng cho máy photocopy và máy in" },
+    { id:10, name:"Khay đựng bút để bàn (nhựa ABS)",        cat:"khan", price:25000,  oldPrice:null,   unit:"cái",  brand:"Deli",       desc:"Khay đựng bút 3 ngăn, chống trượt" },
+  ];
+
+  const VPP_CATS = ['giay', 'khan', 'bang'];
+
+  let products = JSON.parse(localStorage.getItem('tp_products') || 'null') || DEFAULT_PRODUCTS;
+  let cart     = JSON.parse(localStorage.getItem('tp_cart')     || '[]');
+
+  // ── Filter state ──
+  let vppCat      = 'all';
+  let vppMinPrice = 0;
+  let vppMaxPrice = Infinity;
+  let vppSearchQ  = '';
+
+  // ===================== HOTLINE =====================
+  const DEFAULT_PHONE = '0909123456';
+  let hotlinePhone = localStorage.getItem('tp_hotline') || DEFAULT_PHONE;
+
+  function fmtPhone(p) { return p.replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3'); }
+
+  function applyPhone(phone) {
+    const fmt = fmtPhone(phone);
+    ['topbar-phone','hdr-phone-text','footer-phone-num'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.textContent = fmt;
+    });
+    const hl = document.getElementById('hdr-phone-link'); if (hl) hl.href = 'tel:' + phone;
+    const fz = document.getElementById('float-zalo');     if (fz) fz.href = 'https://zalo.me/' + phone;
+    const fh = document.getElementById('float-hotline');  if (fh) fh.href = 'tel:' + phone;
+  }
+
+  // ===================== UTILITIES =====================
+  function fmtPrice(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ'; }
+  function saveCart()  { localStorage.setItem('tp_cart', JSON.stringify(cart)); }
+
+  function normalizeVN(str) {
+    return (str || '').toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/đ/g, 'd').replace(/Đ/g, 'd');
+  }
+
+  // ===================== CARD COLORS & ICONS =====================
+  const CAT_COLORS = {
+    giay: ['#fef3c7','#d97706'], khan: ['#ede9fe','#7c3aed'],
+    bang: ['#dcfce7','#16a34a'], khac: ['#f1f5f9','#64748b']
+  };
+  const CAT_ICONS = { giay:'&#128196;', khan:'&#129529;', bang:'&#128203;', khac:'&#128230;' };
+
+  // ===================== RENDER VPP GRID =====================
+  function renderVppGrid(list) {
+    const grid = document.getElementById('vppGrid');
+    const noP  = document.getElementById('vppNoProducts');
+    const countEl = document.getElementById('vppCount');
+
+    grid.classList.add('grid-loading');
+
+    setTimeout(() => {
+      if (!list.length) {
+        grid.innerHTML = '';
+        noP.style.display = 'block';
+        grid.classList.remove('grid-loading');
+        countEl.textContent = 'Không tìm thấy sản phẩm';
+        return;
+      }
+      noP.style.display = 'none';
+      countEl.textContent = `Hiển thị ${list.length} sản phẩm`;
+
+      grid.innerHTML = list.map((p, i) => {
+        const [bg, accent] = CAT_COLORS[p.cat] || CAT_COLORS.khac;
+        const icon = CAT_ICONS[p.cat] || CAT_ICONS.khac;
+        const discBadge = p.oldPrice
+          ? `<span class="badge-pct">Giảm ${Math.round((1 - p.price / p.oldPrice) * 100)}%</span>` : '';
+        const imgHtml = p.img
+          ? `<img src="${p.img}" alt="${p.name}" class="pcard-photo">`
+          : `<div class="pcard-emoji">${icon}</div>`;
+
+        return `
+        <div class="pcard fade-up" style="--reveal-delay:${i * 0.05}s">
+          <div class="pcard-badges">
+            ${discBadge}
+            <span class="badge-tra">Trả góp 0%</span>
+          </div>
+          <div class="pcard-img" style="background:${p.img ? '#f9f9f9' : bg}">
+            ${imgHtml}
+          </div>
+          <div class="pcard-info">
+            <p class="pcard-brand" style="color:${accent}">${p.brand || ''}</p>
+            <p class="pcard-name">${p.name}</p>
+            <p class="pcard-price">${fmtPrice(p.price)}${p.unit ? '/<span style="font-size:11px;font-weight:400">' + p.unit + '</span>' : ''}
+              ${p.oldPrice ? `<span class="pcard-old">${fmtPrice(p.oldPrice)}</span>` : ''}
+            </p>
+            <p class="pcard-installment">${p.desc || ''}</p>
+            <div class="pcard-foot">
+              <span class="pcard-stars">&#9733; 5</span>
+              <button class="btn-add-cart" onclick="addToCart(${p.id}, this)">+ Thêm vào giỏ</button>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+
+      grid.classList.remove('grid-loading');
+      observeRevealItems();
+    }, 120);
+  }
+
+  // ===================== FILTER & SORT =====================
+  function vppGetBaseList() {
+    return products.filter(p => VPP_CATS.includes(p.cat));
+  }
+
+  function vppApplyFilters() {
+    let list = vppGetBaseList();
+
+    // Category filter
+    if (vppCat !== 'all') list = list.filter(p => p.cat === vppCat);
+
+    // Price filter
+    list = list.filter(p => p.price >= vppMinPrice && p.price <= vppMaxPrice);
+
+    // Search
+    if (vppSearchQ) {
+      const q = normalizeVN(vppSearchQ);
+      list = list.filter(p =>
+        normalizeVN(p.name).includes(q)  ||
+        normalizeVN(p.brand).includes(q) ||
+        normalizeVN(p.desc).includes(q)
+      );
+    }
+
+    // Sort
+    const sort = document.getElementById('vppSort').value;
+    if (sort === 'price-asc')  list = [...list].sort((a, b) => a.price - b.price);
+    if (sort === 'price-desc') list = [...list].sort((a, b) => b.price - a.price);
+    if (sort === 'name')       list = [...list].sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+
+    renderVppGrid(list);
+  }
+
+  function vppSetCat(cat, btn) {
+    vppCat = cat;
+    document.querySelectorAll('.vpp-cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    vppApplyFilters();
+  }
+
+  function vppSetPrice(min, max, btn) {
+    vppMinPrice = min;
+    vppMaxPrice = max;
+    document.querySelectorAll('.vpp-price-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    vppApplyFilters();
+  }
+
+  function vppReset() {
+    vppCat = 'all'; vppMinPrice = 0; vppMaxPrice = Infinity; vppSearchQ = '';
+    document.querySelectorAll('.vpp-cat-btn').forEach((b, i)   => b.classList.toggle('active', i === 0));
+    document.querySelectorAll('.vpp-price-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+    document.getElementById('vppSort').value = 'default';
+    document.getElementById('searchInput').value = '';
+    vppApplyFilters();
+  }
+
+  // Search handler
+  let _vppSearchTimer = null;
+  function handleVppSearch(val) {
+    vppSearchQ = val.trim();
+    clearTimeout(_vppSearchTimer);
+    _vppSearchTimer = setTimeout(vppApplyFilters, 280);
+  }
+
+  // ===================== MOBILE SIDEBAR TOGGLE =====================
+  function toggleVppSidebar() {
+    document.getElementById('vppSidebar').classList.toggle('open');
+    document.getElementById('vppSidebarOverlay').classList.toggle('open');
+  }
+
+  // ===================== SCROLL REVEAL =====================
+  function observeRevealItems() {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up:not(.in-view)').forEach(el => obs.observe(el));
+  }
+
+  // ===================== CART (đồng bộ localStorage với index.html) =====================
+  function updateCartUI() {
+    const count = cart.reduce((s, i) => s + i.qty, 0);
+    document.getElementById('cartCount').textContent = count;
+
+    const itemsEl = document.getElementById('cartItems');
+    const footEl  = document.getElementById('cartFooter');
+    if (!cart.length) {
+      itemsEl.innerHTML = '<p class="cart-empty">Giỏ hàng trống.</p>';
+      footEl.style.display = 'none'; return;
+    }
+
+    let total = 0;
+    itemsEl.innerHTML = cart.map(item => {
+      total += item.price * item.qty;
+      return `<div class="cart-item">
+        <div class="ci-info">
+          <p class="ci-name">${item.name}</p>
+          <p class="ci-price">${fmtPrice(item.price)}</p>
+          <div class="ci-qty">
+            <button onclick="changeQty(${item.id},-1)">&#8722;</button>
+            <span>${item.qty}</span>
+            <button onclick="changeQty(${item.id},+1)">&#43;</button>
+          </div>
+        </div>
+        <button class="ci-del" onclick="removeFromCart(${item.id})">&#10005;</button>
+      </div>`;
+    }).join('');
+    footEl.style.display = 'flex';
+    document.getElementById('cartTotal').textContent = fmtPrice(total);
+  }
+
+  // ── Toast ──
+  let _toastContainer = null;
+  function getToastContainer() {
+    if (!_toastContainer) {
+      _toastContainer = document.createElement('div');
+      _toastContainer.className = 'toast-container';
+      document.body.appendChild(_toastContainer);
+    }
+    return _toastContainer;
+  }
+  function showToast(msg) {
+    const c = getToastContainer();
+    const t = document.createElement('div');
+    t.className = 'toast'; t.textContent = msg;
+    c.appendChild(t);
+    setTimeout(() => { t.classList.add('toast-hide'); setTimeout(() => t.remove(), 300); }, 2000);
+  }
+
+  // ── Fly-to-cart animation ──
+  function flyToCart(btnEl, onComplete) {
+    const btnRect  = btnEl.getBoundingClientRect();
+    const cartIcon = document.querySelector('#cartBtn .hdr-icon');
+    const cartRect = cartIcon.getBoundingClientRect();
+    const startX = btnRect.left + btnRect.width / 2;
+    const startY = btnRect.top  + btnRect.height / 2;
+    const dx = cartRect.left + cartRect.width  / 2 - startX;
+    const dy = cartRect.top  + cartRect.height / 2 - startY;
+    const dot = document.createElement('div');
+    dot.className = 'fly-dot';
+    dot.style.left = (startX - 6) + 'px';
+    dot.style.top  = (startY - 6) + 'px';
+    document.body.appendChild(dot);
+    const anim = dot.animate([
+      { transform: 'translate(0,0) scale(1)', opacity: 1 },
+      { transform: `translate(${dx*.45}px,${dy*.25-90}px) scale(0.85)`, opacity: 0.85, offset: 0.42 },
+      { transform: `translate(${dx}px,${dy}px) scale(0.25)`, opacity: 0 }
+    ], { duration: 680, easing: 'cubic-bezier(0.25,0.46,0.45,0.94)', fill: 'forwards' });
+    anim.onfinish = () => { dot.remove(); onComplete(); };
+  }
+
+  function triggerCartFeedback() {
+    const iconEl = document.querySelector('#cartBtn .hdr-icon');
+    iconEl.classList.remove('cart-jiggle'); void iconEl.offsetWidth;
+    iconEl.classList.add('cart-jiggle');
+    iconEl.addEventListener('animationend', () => iconEl.classList.remove('cart-jiggle'), { once: true });
+    const badge = document.getElementById('cartCount');
+    badge.classList.remove('badge-pop'); void badge.offsetWidth;
+    badge.classList.add('badge-pop');
+    badge.addEventListener('animationend', () => badge.classList.remove('badge-pop'), { once: true });
+  }
+
+  function addToCart(id, btnEl) {
+    // Reload từ localStorage để đồng bộ nếu tab index.html đã thêm sản phẩm
+    products = JSON.parse(localStorage.getItem('tp_products') || 'null') || DEFAULT_PRODUCTS;
+    cart     = JSON.parse(localStorage.getItem('tp_cart')     || '[]');
+
+    const p = products.find(x => x.id === id);
+    if (!p) return;
+    const existing = cart.find(x => x.id === id);
+    if (existing) existing.qty++;
+    else cart.push({ id: p.id, name: p.name, price: p.price, qty: 1 });
+    saveCart();
+    updateCartUI();
+    showToast(`Đã thêm ${p.name} vào giỏ!`);
+    if (btnEl) flyToCart(btnEl, triggerCartFeedback);
+    else triggerCartFeedback();
+  }
+
+  function changeQty(id, delta) {
+    const item = cart.find(x => x.id === id);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) cart = cart.filter(x => x.id !== id);
+    saveCart(); updateCartUI();
+  }
+
+  function removeFromCart(id) {
+    cart = cart.filter(x => x.id !== id);
+    saveCart(); updateCartUI();
+  }
+
+  function toggleCart() {
+    document.getElementById('cartOverlay').classList.toggle('open');
+  }
+  function closeCartIfOutside(e) {
+    if (e.target.id === 'cartOverlay') toggleCart();
+  }
+
+  document.getElementById('cartBtn').addEventListener('click', toggleCart);
+
+  // ===================== CHECKOUT MODAL =====================
+  function openCheckout() {
+    if (!cart.length) return;
+    document.getElementById('cartOverlay').classList.remove('open');
+    renderCheckoutSummary();
+    document.getElementById('checkoutOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => { const f = document.getElementById('co-name'); if (f) f.focus(); }, 320);
+  }
+
+  function closeCheckout() {
+    document.getElementById('checkoutOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeCheckoutIfOutside(e) {
+    if (e.target.id === 'checkoutOverlay') closeCheckout();
+  }
+
+  function renderCheckoutSummary() {
+    const el = document.getElementById('checkoutSummary');
+    let total = 0;
+    const itemsHtml = cart.map(item => {
+      const subtotal = item.price * item.qty;
+      total += subtotal;
+      return `<div class="co-item">
+        <span class="co-item-name">${item.name}</span>
+        <span class="co-item-qty">x${item.qty}</span>
+        <span class="co-item-price">${fmtPrice(subtotal)}</span>
+      </div>`;
+    }).join('');
+    el.innerHTML = `
+      <div class="co-summary">
+        <p class="co-summary-title">Đơn hàng &mdash; ${cart.reduce((s,i)=>s+i.qty,0)} sản phẩm</p>
+        <div class="co-items">${itemsHtml}</div>
+        <div class="co-divider"></div>
+        <div class="co-total"><span>Tổng cộng</span><strong>${fmtPrice(total)}</strong></div>
+      </div>`;
+  }
+
+  function submitOrder(e) {
+    e.preventDefault();
+    const name    = (document.getElementById('co-name').value    || '').trim();
+    const phone   = (document.getElementById('co-phone').value   || '').trim();
+    const address = (document.getElementById('co-address').value || '').trim();
+    const note    = (document.getElementById('co-note').value    || '').trim();
+
+    let hasError = false;
+    ['co-name','co-phone'].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el.value.trim()) {
+        el.classList.add('input-error');
+        el.addEventListener('input', () => el.classList.remove('input-error'), { once: true });
+        hasError = true;
+      }
+    });
+    if (hasError) return;
+
+    const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    const order = {
+      orderId:  'TP-' + Date.now(),
+      customer: { name, phone, address, note },
+      items:    cart.map(i => ({ id: i.id, name: i.name, price: i.price, qty: i.qty })),
+      total,
+      status:   'Mới',
+      date:     new Date().toISOString()
+    };
+
+    const orders = JSON.parse(localStorage.getItem('tp_orders') || '[]');
+    orders.unshift(order);
+    localStorage.setItem('tp_orders', JSON.stringify(orders));
+
+    cart = [];
+    saveCart();
+    updateCartUI();
+    closeCheckout();
+    document.getElementById('checkoutForm').reset();
+    showOrderSuccessToast(order.orderId);
+  }
+
+  function showOrderSuccessToast(orderId) {
+    const container = getToastContainer();
+    const toast = document.createElement('div');
+    toast.className = 'toast toast-order-success';
+    toast.innerHTML =
+      `&#127881; Đặt hàng thành công!<br>` +
+      `<span style="font-size:12px;opacity:0.75">Mã đơn: ${orderId} — Thịnh Phát sẽ sớm liên hệ bạn.</span>`;
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.classList.add('toast-hide');
+      setTimeout(() => toast.remove(), 400);
+    }, 5500);
+  }
+
+  // ===================== INIT =====================
+  document.addEventListener('DOMContentLoaded', () => {
+    // Reload từ localStorage để lấy data mới nhất
+    products = JSON.parse(localStorage.getItem('tp_products') || 'null') || DEFAULT_PRODUCTS;
+    cart     = JSON.parse(localStorage.getItem('tp_cart')     || '[]');
+
+    applyPhone(hotlinePhone);
+    updateCartUI();
+
+    // Đọc URL param ?cat=giay để pre-filter
+    const urlCat = new URLSearchParams(window.location.search).get('cat');
+    if (urlCat && VPP_CATS.includes(urlCat)) {
+      vppCat = urlCat;
+      const btn = document.querySelector(`.vpp-cat-btn[data-cat="${urlCat}"]`);
+      if (btn) {
+        document.querySelectorAll('.vpp-cat-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+    }
+
+    vppApplyFilters();
+  });
+
+  // Lắng nghe storage event để đồng bộ giỏ hàng realtime giữa các tab
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'tp_cart') {
+      cart = JSON.parse(e.newValue || '[]');
+      updateCartUI();
+    }
+    if (e.key === 'tp_products') {
+      products = JSON.parse(e.newValue || 'null') || DEFAULT_PRODUCTS;
+      vppApplyFilters();
+    }
+  });
+  </script>
+
+</body>
+</html>

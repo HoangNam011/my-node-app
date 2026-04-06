@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sửa chữa & Thay mực - Thịnh Phát</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-scroll">
+      <span>&#9679; Sửa chữa máy photocopy - Thay mực tất cả dòng máy</span>
+      <span>&#9679; Kỹ thuật viên kinh nghiệm 10 năm - Hỗ trợ tận nơi</span>
+      <span>&#9679; Hotline: <span id="topbar-phone">0909 123 456</span> - Hỗ trợ 24/7</span>
+      <span>&#9679; Bảo hành linh kiện 3 tháng</span>
+      <span>&#9679; Sửa chữa máy photocopy - Thay mực tất cả dòng máy</span>
+      <span>&#9679; Kỹ thuật viên kinh nghiệm 10 năm - Hỗ trợ tận nơi</span>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="logo">
+        <span class="logo-main">Thịnh</span><span class="logo-red">Phát</span><span class="logo-dot-red">.</span>
+      </a>
+
+      <div class="search-box" style="pointer-events:none; opacity:0.4;">
+        <svg class="search-icon" width="15" height="15" fill="none" stroke="#999" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" placeholder="Tìm kiếm dịch vụ..." disabled />
+      </div>
+
+      <div class="header-right">
+        <a href="tel:0909123456" class="hdr-btn hdr-phone" id="hdr-phone-link">
+          <div class="hdr-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <span id="hdr-phone-text">0909 123 456</span>
+        </a>
+        <a href="lien-he.html" class="hdr-btn">
+          <div class="hdr-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <span>Liên hệ</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- CATEGORY NAV -->
+  <nav class="cat-nav">
+    <div class="cat-nav-inner">
+      <a href="index.html"    class="cat-link">Trang chủ</a>
+      <a href="thue-may.html" class="cat-link">Cho thuê máy</a>
+      <a href="sua-chua.html" class="cat-link active">Sửa chữa &amp; Thay mực</a>
+      <a href="vpp.html"      class="cat-link">Văn phòng phẩm</a>
+      <a href="lien-he.html" class="cat-link">Liên hệ</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="vpp-hero" style="background: linear-gradient(135deg, #111827 0%, #374151 100%);">
+    <div class="vpp-hero-inner">
+      <nav class="vpp-breadcrumb" aria-label="breadcrumb">
+        <a href="index.html" style="color:rgba(255,255,255,0.65)">Trang chủ</a>
+        <svg width="11" height="11" fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        <span style="color:#fff">Sửa chữa &amp; Thay mực</span>
+      </nav>
+      <h1 class="vpp-hero-title" style="color:#fff">Sửa chữa &amp; Thay mực</h1>
+      <p class="vpp-hero-sub" style="color:rgba(255,255,255,0.8)">Kỹ thuật viên tay nghề cao &mdash; Hỗ trợ tại văn phòng bạn &mdash; Bảo hành linh kiện 3 tháng</p>
+    </div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="svc-stats-wrap">
+    <div class="svc-stats">
+      <div class="svc-stat">
+        <p class="svc-stat-num">500<span>+</span></p>
+        <p class="svc-stat-label">Khách hàng tin dùng</p>
+      </div>
+      <div class="svc-stat">
+        <p class="svc-stat-num">10<span> năm</span></p>
+        <p class="svc-stat-label">Kinh nghiệm dịch vụ</p>
+      </div>
+      <div class="svc-stat">
+        <p class="svc-stat-num">24/7</p>
+        <p class="svc-stat-label">Hỗ trợ kỹ thuật</p>
+      </div>
+      <div class="svc-stat">
+        <p class="svc-stat-num">3<span> tháng</span></p>
+        <p class="svc-stat-label">Bảo hành linh kiện</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE PACKAGES -->
+  <section class="svc-section">
+    <div class="svc-section-inner">
+      <div class="section-bar" style="border:none; background:transparent; padding:0 0 8px 0; margin-bottom: 28px;">
+        <span class="section-bar-label">GÓI DỊCH VỤ</span>
+        <h2 style="margin:0">Chọn gói phù hợp với bạn</h2>
+      </div>
+
+      <div class="svc-pkg-grid">
+
+        <!-- Gói Cơ bản -->
+        <div class="svc-pkg-card fade-up">
+          <p class="svc-pkg-tier">Gói Cơ Bản</p>
+          <p class="svc-pkg-price">Từ <strong>150.000đ</strong></p>
+          <span class="svc-pkg-from">/ lần sửa</span>
+          <ul class="svc-pkg-list">
+            <li>Kiểm tra &amp; vệ sinh máy</li>
+            <li>Thay mực / đổ mực</li>
+            <li>Chỉnh bản in bị mờ / lệch</li>
+            <li>Tư vấn kỹ thuật miễn phí</li>
+            <li class="pkg-disabled">Thay linh kiện phụ tùng</li>
+            <li class="pkg-disabled">Sửa tại xưởng</li>
+          </ul>
+          <a href="lien-he.html" class="btn-svc-pkg btn-svc-pkg-outline">Đặt lịch ngay</a>
+        </div>
+
+        <!-- Gói Tiêu chuẩn (featured) -->
+        <div class="svc-pkg-card featured fade-up" style="--reveal-delay:0.08s">
+          <div class="svc-pkg-badge">Phổ biến nhất</div>
+          <p class="svc-pkg-tier">Gói Tiêu Chuẩn</p>
+          <p class="svc-pkg-price">Từ <strong>350.000đ</strong></p>
+          <span class="svc-pkg-from">/ lần sửa</span>
+          <ul class="svc-pkg-list">
+            <li>Toàn bộ Gói Cơ Bản</li>
+            <li>Thay linh kiện thông dụng</li>
+            <li>Vệ sinh sâu toàn bộ máy</li>
+            <li>Kiểm tra kết nối mạng</li>
+            <li>Bảo hành linh kiện 1 tháng</li>
+            <li class="pkg-disabled">Sửa bo mạch / điện tử</li>
+          </ul>
+          <a href="lien-he.html" class="btn-svc-pkg">Đặt lịch ngay</a>
+        </div>
+
+        <!-- Gói Cao cấp -->
+        <div class="svc-pkg-card fade-up" style="--reveal-delay:0.16s">
+          <p class="svc-pkg-tier">Gói Cao Cấp</p>
+          <p class="svc-pkg-price">Từ <strong>800.000đ</strong></p>
+          <span class="svc-pkg-from">/ lần sửa</span>
+          <ul class="svc-pkg-list">
+            <li>Toàn bộ Gói Tiêu Chuẩn</li>
+            <li>Sửa bo mạch &amp; điện tử</li>
+            <li>Mang về xưởng nếu cần</li>
+            <li>Thay phụ tùng chính hãng</li>
+            <li>Bảo hành linh kiện 3 tháng</li>
+            <li>Hỗ trợ ưu tiên 24/7</li>
+          </ul>
+          <a href="lien-he.html" class="btn-svc-pkg btn-svc-pkg-outline">Đặt lịch ngay</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="svc-section svc-section-gray">
+    <div class="svc-section-inner">
+      <div class="section-bar" style="border:none; background:transparent; padding:0 0 8px 0; margin-bottom: 28px;">
+        <span class="section-bar-label">QUY TRÌNH</span>
+        <h2 style="margin:0">4 bước đơn giản</h2>
+      </div>
+
+      <div class="svc-steps">
+        <div class="svc-step fade-up">
+          <div class="svc-step-num">1</div>
+          <div class="svc-step-icon">&#128222;</div>
+          <h4>Liên hệ đặt lịch</h4>
+          <p>Gọi hotline hoặc nhắn Zalo — chúng tôi xác nhận lịch trong 15 phút.</p>
+        </div>
+        <div class="svc-step fade-up" style="--reveal-delay:0.08s">
+          <div class="svc-step-num">2</div>
+          <div class="svc-step-icon">&#128295;</div>
+          <h4>Kỹ thuật viên đến nơi</h4>
+          <p>KTV có mặt đúng giờ, mang theo đầy đủ dụng cụ và linh kiện phổ thông.</p>
+        </div>
+        <div class="svc-step fade-up" style="--reveal-delay:0.16s">
+          <div class="svc-step-num">3</div>
+          <div class="svc-step-icon">&#128269;</div>
+          <h4>Chẩn đoán &amp; báo giá</h4>
+          <p>Kiểm tra chi tiết, báo giá minh bạch — khách đồng ý mới tiến hành sửa.</p>
+        </div>
+        <div class="svc-step fade-up" style="--reveal-delay:0.24s">
+          <div class="svc-step-num">4</div>
+          <div class="svc-step-icon">&#10003;</div>
+          <h4>Bàn giao &amp; bảo hành</h4>
+          <p>Chạy thử trực tiếp, xuất phiếu bảo hành linh kiện tận tay khách hàng.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORTED BRANDS -->
+  <section class="svc-section">
+    <div class="svc-section-inner">
+      <div class="section-bar" style="border:none; background:transparent; padding:0 0 8px 0; margin-bottom: 24px;">
+        <span class="section-bar-label">THƯƠNG HIỆU</span>
+        <h2 style="margin:0">Dòng máy chúng tôi hỗ trợ</h2>
+      </div>
+
+      <div class="svc-brands">
+        <span class="svc-brand-chip">&#128444; Ricoh</span>
+        <span class="svc-brand-chip">&#128444; Canon</span>
+        <span class="svc-brand-chip">&#128444; Kyocera</span>
+        <span class="svc-brand-chip">&#128444; Toshiba</span>
+        <span class="svc-brand-chip">&#128444; Konica Minolta</span>
+        <span class="svc-brand-chip">&#128444; Fuji Xerox</span>
+        <span class="svc-brand-chip">&#128444; Sharp</span>
+        <span class="svc-brand-chip">&#128444; Brother</span>
+        <span class="svc-brand-chip">&#128444; HP</span>
+        <span class="svc-brand-chip">&#128444; Epson</span>
+        <span class="svc-brand-chip svc-brand-chip-more">+ Nhiều hãng khác</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CONTACT STRIP -->
+  <section class="svc-cta-strip">
+    <div class="svc-cta-inner">
+      <div>
+        <h2 class="svc-cta-title">Máy đang gặp sự cố?</h2>
+        <p class="svc-cta-sub">Liên hệ ngay — kỹ thuật viên hỗ trợ trong vòng 2 giờ tại TP.HCM.</p>
+      </div>
+      <div class="svc-cta-actions">
+        <a href="tel:0909123456" id="svc-cta-phone" class="btn-banner">&#128222; Gọi ngay</a>
+        <a href="lien-he.html" class="btn-banner-outline" style="border-color:rgba(255,255,255,0.5);color:#fff">Đặt lịch online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-inner">
+        <div class="footer-col col-brand">
+          <div class="footer-logo">Thịnh<span>Phát</span>.</div>
+          <p>Chuyên cho thuê máy photocopy,<br>sửa chữa thay mực và cung cấp<br>văn phòng phẩm TP. Hồ Chí Minh.</p>
+          <p class="footer-hotline">&#128222; <span id="footer-phone-num">0909 123 456</span></p>
+        </div>
+        <div class="footer-col">
+          <strong>Dịch vụ</strong>
+          <a href="thue-may.html">Cho thuê máy photocopy</a>
+          <a href="sua-chua.html">Sửa chữa máy photo</a>
+          <a href="sua-chua.html">Thay mực hộp mực</a>
+          <a href="vpp.html">Văn phòng phẩm</a>
+        </div>
+        <div class="footer-col">
+          <strong>Sửa chữa</strong>
+          <a href="sua-chua.html">Gói Cơ Bản</a>
+          <a href="sua-chua.html">Gói Tiêu Chuẩn</a>
+          <a href="sua-chua.html">Gói Cao Cấp</a>
+          <a href="lien-he.html">Đặt lịch sửa chữa</a>
+        </div>
+        <div class="footer-col">
+          <strong>Hỗ trợ</strong>
+          <a href="lien-he.html">Liên hệ tư vấn</a>
+          <a href="lien-he.html">Chính sách bảo hành</a>
+          <a href="lien-he.html">Quy trình sửa chữa</a>
+        </div>
+      </div>
+    </div>
+    <!-- CONTACT INFO STRIP -->
+    <div class="footer-contact">
+      <div class="footer-contact-inner">
+        <div class="footer-contact-item">
+          <span class="fci-icon">&#128205;</span>
+          <div class="fci-text">
+            <p class="fci-label">Địa chỉ văn phòng</p>
+            <p class="fci-value">123 Nguyễn Văn Linh, P. Tân Phong, Q. 7, TP. Hồ Chí Minh</p>
+          </div>
+        </div>
+        <div class="fci-divider"></div>
+        <div class="footer-contact-item">
+          <span class="fci-icon">&#128222;</span>
+          <div class="fci-text">
+            <p class="fci-label">Hotline hỗ trợ 24/7</p>
+            <p class="fci-value"><a href="tel:0909123456" id="footer-cta-phone">0909 123 456</a></p>
+          </div>
+        </div>
+        <div class="fci-divider"></div>
+        <div class="footer-contact-item">
+          <span class="fci-icon">&#9993;</span>
+          <div class="fci-text">
+            <p class="fci-label">Email</p>
+            <p class="fci-value"><a href="mailto:info@thinhphat.vn">info@thinhphat.vn</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Công ty TNHH Thịnh Phát &nbsp;|&nbsp; MST: 0312345678 &nbsp;|&nbsp; All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CONTACT -->
+  <div class="float-contact">
+    <a id="float-zalo" href="https://zalo.me/0909123456" target="_blank" rel="noopener" class="float-btn float-zalo">
+      <svg width="22" height="22" viewBox="0 0 40 40" fill="white" xmlns="http://www.w3.org/2000/svg"><text x="4" y="30" font-size="30" font-family="Arial" font-weight="900">Z</text></svg>
+      <span class="float-label">Chat Zalo</span>
+    </a>
+    <a id="float-hotline" href="tel:0909123456" class="float-btn float-hotline">
+      <svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </a>
+  </div>
+
+  <script>
+  // ===================== HOTLINE =====================
+  const DEFAULT_PHONE = '0909123456';
+  let hotlinePhone = localStorage.getItem('tp_hotline') || DEFAULT_PHONE;
+
+  function fmtPhone(p) { return p.replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3'); }
+
+  function applyPhone(phone) {
+    const fmt = fmtPhone(phone);
+    ['topbar-phone','hdr-phone-text','footer-phone-num'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.textContent = fmt;
+    });
+    const hl = document.getElementById('hdr-phone-link');  if (hl) hl.href = 'tel:' + phone;
+    const cp = document.getElementById('svc-cta-phone');   if (cp) cp.href = 'tel:' + phone;
+    const fz = document.getElementById('float-zalo');      if (fz) fz.href = 'https://zalo.me/' + phone;
+    const fh = document.getElementById('float-hotline');   if (fh) fh.href = 'tel:' + phone;
+  }
+
+  // ===================== SCROLL REVEAL =====================
+  function observeRevealItems() {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up:not(.in-view)').forEach(el => obs.observe(el));
+  }
+
+  // ===================== INIT =====================
+  document.addEventListener('DOMContentLoaded', () => {
+    applyPhone(hotlinePhone);
+    observeRevealItems();
+  });
+  </script>
+
+</body>
+</html>

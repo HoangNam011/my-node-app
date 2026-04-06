@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cho thuê máy photocopy - Thịnh Phát</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-bar-scroll">
+      <span>&#9679; Cho thuê máy photocopy giá rẻ - Giao máy tận nơi TP.HCM</span>
+      <span>&#9679; Ricoh, Canon, Kyocera, Toshiba, Konica - Bảo hành 12 tháng</span>
+      <span>&#9679; Hotline: <span id="topbar-phone">0909 123 456</span> - Hỗ trợ 24/7</span>
+      <span>&#9679; Hợp đồng linh hoạt theo tháng / quý / năm</span>
+      <span>&#9679; Cho thuê máy photocopy giá rẻ - Giao máy tận nơi TP.HCM</span>
+      <span>&#9679; Ricoh, Canon, Kyocera, Toshiba, Konica - Bảo hành 12 tháng</span>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="header-inner">
+
+      <a href="index.html" class="logo">
+        <span class="logo-main">Thịnh</span><span class="logo-red">Phát</span><span class="logo-dot-red">.</span>
+      </a>
+
+      <div class="search-box">
+        <svg class="search-icon" width="15" height="15" fill="none" stroke="#999" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm máy photocopy..." oninput="handleRentalSearch(this.value)" />
+        <button class="search-submit">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+      </div>
+
+      <div class="header-right">
+        <a href="tel:0909123456" class="hdr-btn hdr-phone" id="hdr-phone-link">
+          <div class="hdr-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <span id="hdr-phone-text">0909 123 456</span>
+        </a>
+        <a href="lien-he.html" class="hdr-btn">
+          <div class="hdr-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <span>Liên hệ</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- CATEGORY NAV -->
+  <nav class="cat-nav">
+    <div class="cat-nav-inner">
+      <a href="index.html"    class="cat-link">Trang chủ</a>
+      <a href="thue-may.html" class="cat-link active">Cho thuê máy</a>
+      <a href="sua-chua.html" class="cat-link">Sửa chữa &amp; Thay mực</a>
+      <a href="vpp.html"      class="cat-link">Văn phòng phẩm</a>
+      <a href="lien-he.html" class="cat-link">Liên hệ</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="vpp-hero" style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);">
+    <div class="vpp-hero-inner">
+      <nav class="vpp-breadcrumb" aria-label="breadcrumb" style="--bc-color: rgba(255,255,255,0.7); --bc-active: #fff;">
+        <a href="index.html" style="color:rgba(255,255,255,0.7)">Trang chủ</a>
+        <svg width="11" height="11" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        <span style="color:#fff">Cho thuê máy photocopy</span>
+      </nav>
+      <h1 class="vpp-hero-title" style="color:#fff">Cho thuê máy photocopy</h1>
+      <p class="vpp-hero-sub" style="color:rgba(255,255,255,0.85)">Ricoh &middot; Canon &middot; Kyocera &middot; Toshiba &middot; Konica &mdash; Giao máy tận nơi, bảo hành 12 tháng</p>
+    </div>
+  </div>
+
+  <!-- MAIN: SIDEBAR + GRID -->
+  <div class="vpp-wrap">
+
+    <!-- Mobile overlay -->
+    <div class="vpp-sidebar-overlay" id="rentalSidebarOverlay" onclick="toggleRentalSidebar()"></div>
+
+    <div class="vpp-layout">
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="vpp-sidebar" id="rentalSidebar">
+
+        <div class="vpp-sidebar-header">
+          <span>&#9776; Bộ lọc</span>
+          <button class="vpp-sidebar-close" onclick="toggleRentalSidebar()" aria-label="Đóng bộ lọc">&#10005;</button>
+        </div>
+
+        <!-- Thương hiệu -->
+        <div class="vpp-sidebar-section">
+          <h3 class="vpp-sidebar-title">Thương hiệu</h3>
+          <button class="vpp-cat-btn active" data-brand="all"     onclick="rentalSetBrand('all', this)">Tất cả thương hiệu</button>
+          <button class="vpp-cat-btn"        data-brand="ricoh"   onclick="rentalSetBrand('ricoh', this)">
+            <span class="vpp-cat-icon">&#128444;</span> Ricoh
+          </button>
+          <button class="vpp-cat-btn"        data-brand="canon"   onclick="rentalSetBrand('canon', this)">
+            <span class="vpp-cat-icon">&#128444;</span> Canon
+          </button>
+          <button class="vpp-cat-btn"        data-brand="kyocera" onclick="rentalSetBrand('kyocera', this)">
+            <span class="vpp-cat-icon">&#128444;</span> Kyocera
+          </button>
+          <button class="vpp-cat-btn"        data-brand="toshiba" onclick="rentalSetBrand('toshiba', this)">
+            <span class="vpp-cat-icon">&#128444;</span> Toshiba
+          </button>
+          <button class="vpp-cat-btn"        data-brand="konica"  onclick="rentalSetBrand('konica', this)">
+            <span class="vpp-cat-icon">&#128444;</span> Konica Minolta
+          </button>
+        </div>
+
+        <!-- Giá thuê/tháng -->
+        <div class="vpp-sidebar-section">
+          <h3 class="vpp-sidebar-title">Giá thuê / tháng</h3>
+          <button class="vpp-price-btn active" onclick="rentalSetPrice(0, Infinity, this)">Tất cả mức giá</button>
+          <button class="vpp-price-btn"        onclick="rentalSetPrice(0, 600000, this)">Dưới 600.000đ</button>
+          <button class="vpp-price-btn"        onclick="rentalSetPrice(600000, 1000000, this)">600k – 1.000.000đ</button>
+          <button class="vpp-price-btn"        onclick="rentalSetPrice(1000000, 2000000, this)">1.000.000 – 2.000.000đ</button>
+          <button class="vpp-price-btn"        onclick="rentalSetPrice(2000000, Infinity, this)">Trên 2.000.000đ</button>
+        </div>
+
+        <!-- Sắp xếp -->
+        <div class="vpp-sidebar-section">
+          <h3 class="vpp-sidebar-title">Sắp xếp theo</h3>
+          <select class="vpp-sort-select" id="rentalSort" onchange="rentalApplyFilters()">
+            <option value="default">Mặc định</option>
+            <option value="price-asc">Giá: Thấp &#8594; Cao</option>
+            <option value="price-desc">Giá: Cao &#8594; Thấp</option>
+            <option value="name">Tên A &#8594; Z</option>
+          </select>
+        </div>
+
+        <!-- CTA liên hệ -->
+        <div class="vpp-sidebar-section">
+          <a href="lien-he.html" class="btn-rent-now" style="display:block;text-align:center;padding:10px 16px;border-radius:8px;font-weight:700;font-size:13.5px;text-decoration:none;">
+            &#128222; Tư vấn miễn phí
+          </a>
+        </div>
+
+      </aside>
+
+      <!-- ── MAIN AREA ── -->
+      <main class="vpp-main">
+
+        <div class="vpp-toolbar">
+          <p class="vpp-result-count" id="rentalCount">Đang tải...</p>
+          <button class="vpp-filter-toggle" onclick="toggleRentalSidebar()">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/>
+            </svg>
+            Lọc &amp; Sắp xếp
+          </button>
+        </div>
+
+        <div class="rcard-grid" id="rentalGrid">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="no-products" id="rentalNoProducts" style="display:none">
+          <p>Không tìm thấy máy phù hợp. <a href="javascript:void(0)" onclick="rentalReset()">Xoá bộ lọc</a></p>
+        </div>
+
+        <!-- Ưu đãi khi thuê -->
+        <div class="rental-benefits">
+          <h3 class="rental-benefits-title">Tại sao chọn Thịnh Phát?</h3>
+          <div class="rental-benefits-grid">
+            <div class="rental-benefit-item">
+              <div class="rb-icon">&#128666;</div>
+              <p class="rb-label">Giao máy tận nơi</p>
+              <p class="rb-sub">Nội thành TP.HCM trong ngày</p>
+            </div>
+            <div class="rental-benefit-item">
+              <div class="rb-icon">&#128295;</div>
+              <p class="rb-label">Bảo hành 12 tháng</p>
+              <p class="rb-sub">Kỹ thuật viên hỗ trợ 24/7</p>
+            </div>
+            <div class="rental-benefit-item">
+              <div class="rb-icon">&#128203;</div>
+              <p class="rb-label">Hợp đồng linh hoạt</p>
+              <p class="rb-sub">Theo tháng / quý / năm</p>
+            </div>
+            <div class="rental-benefit-item">
+              <div class="rb-icon">&#128176;</div>
+              <p class="rb-label">Giá cạnh tranh</p>
+              <p class="rb-sub">Từ 500.000đ/tháng</p>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-inner">
+        <div class="footer-col col-brand">
+          <div class="footer-logo">Thịnh<span>Phát</span>.</div>
+          <p>Chuyên cho thuê máy photocopy,<br>sửa chữa thay mực và cung cấp<br>văn phòng phẩm TP. Hồ Chí Minh.</p>
+          <p class="footer-hotline">&#128222; <span id="footer-phone-num">0909 123 456</span></p>
+        </div>
+        <div class="footer-col">
+          <strong>Dịch vụ</strong>
+          <a href="thue-may.html">Cho thuê máy photocopy</a>
+          <a href="sua-chua.html">Sửa chữa máy photo</a>
+          <a href="sua-chua.html">Thay mực hộp mực</a>
+          <a href="vpp.html">Văn phòng phẩm</a>
+        </div>
+        <div class="footer-col">
+          <strong>Máy cho thuê</strong>
+          <a href="thue-may.html?brand=ricoh">Ricoh</a>
+          <a href="thue-may.html?brand=canon">Canon</a>
+          <a href="thue-may.html?brand=kyocera">Kyocera</a>
+          <a href="thue-may.html?brand=toshiba">Toshiba</a>
+          <a href="thue-may.html?brand=konica">Konica Minolta</a>
+        </div>
+        <div class="footer-col">
+          <strong>Hỗ trợ</strong>
+          <a href="lien-he.html">Liên hệ tư vấn</a>
+          <a href="lien-he.html">Chính sách bảo hành</a>
+          <a href="lien-he.html">Hướng dẫn thuê máy</a>
+        </div>
+      </div>
+    </div>
+    <!-- CONTACT INFO STRIP -->
+    <div class="footer-contact">
+      <div class="footer-contact-inner">
+        <div class="footer-contact-item">
+          <span class="fci-icon">&#128205;</span>
+          <div class="fci-text">
+            <p class="fci-label">Địa chỉ văn phòng</p>
+            <p class="fci-value">123 Nguyễn Văn Linh, P. Tân Phong, Q. 7, TP. Hồ Chí Minh</p>
+          </div>
+        </div>
+        <div class="fci-divider"></div>
+        <div class="footer-contact-item">
+          <span class="fci-icon">&#128222;</span>
+          <div class="fci-text">
+            <p class="fci-label">Hotline hỗ trợ 24/7</p>
+            <p class="fci-value"><a href="tel:0909123456" id="footer-cta-phone">0909 123 456</a></p>
+          </div>
+        </div>
+        <div class="fci-divider"></div>
+        <div class="footer-contact-item">
+          <span class="fci-icon">&#9993;</span>
+          <div class="fci-text">
+            <p class="fci-label">Email</p>
+            <p class="fci-value"><a href="mailto:info@thinhphat.vn">info@thinhphat.vn</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Công ty TNHH Thịnh Phát &nbsp;|&nbsp; MST: 0312345678 &nbsp;|&nbsp; All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CONTACT -->
+  <div class="float-contact">
+    <a id="float-zalo" href="https://zalo.me/0909123456" target="_blank" rel="noopener" class="float-btn float-zalo">
+      <svg width="22" height="22" viewBox="0 0 40 40" fill="white" xmlns="http://www.w3.org/2000/svg"><text x="4" y="30" font-size="30" font-family="Arial" font-weight="900">Z</text></svg>
+      <span class="float-label">Chat Zalo</span>
+    </a>
+    <a id="float-hotline" href="tel:0909123456" class="float-btn float-hotline">
+      <svg width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    </a>
+  </div>
+
+  <script>
+  // ===================== DATA =====================
+  const RENTAL_MACHINES = [
+    {
+      id: 'r1', brand: 'ricoh', brandLabel: 'Ricoh',
+      name: 'Ricoh MP2014 / MP2014D',
+      specs: 'A4/A3 &middot; 20 trang/phút &middot; In 2 mặt',
+      desc: 'Phù hợp văn phòng nhỏ 5–15 người. Tiêu thụ điện thấp.',
+      price: 600000,
+      badge: null
+    },
+    {
+      id: 'r2', brand: 'ricoh', brandLabel: 'Ricoh',
+      name: 'Ricoh MP2014AD',
+      specs: 'A4/A3 &middot; 20 trang/phút &middot; ADF + In 2 mặt',
+      desc: 'Tích hợp khay nạp tài liệu tự động 35 tờ, copy 2 mặt tốc độ cao.',
+      price: 700000,
+      badge: 'Phổ biến'
+    },
+    {
+      id: 'r3', brand: 'canon', brandLabel: 'Canon',
+      name: 'Canon IR2206 / IR2206N',
+      specs: 'A3 &middot; 22 trang/phút &middot; Kết nối mạng',
+      desc: 'In qua mạng LAN, in 2 mặt tự động, phù hợp văn phòng 10–30 người.',
+      price: 800000,
+      badge: null
+    },
+    {
+      id: 'r4', brand: 'canon', brandLabel: 'Canon',
+      name: 'Canon IR2425 / IR2425i',
+      specs: 'A3 &middot; 25 trang/phút &middot; Wi-Fi &middot; Scan màu',
+      desc: 'Kết nối Wi-Fi, scan màu trực tiếp về email/USB/FTP.',
+      price: 1100000,
+      badge: 'Mới'
+    },
+    {
+      id: 'r5', brand: 'kyocera', brandLabel: 'Kyocera',
+      name: 'Kyocera TASKalfa 2200',
+      specs: 'A3 &middot; 22 trang/phút &middot; Drum trống bền',
+      desc: 'Chi phí in thấp, drum tích hợp bền, thích hợp văn phòng bận rộn.',
+      price: 900000,
+      badge: null
+    },
+    {
+      id: 'r6', brand: 'kyocera', brandLabel: 'Kyocera',
+      name: 'Kyocera TASKalfa 2552ci',
+      specs: 'A3 Màu &middot; 25 trang/phút &middot; Touch screen',
+      desc: 'Photocopy màu chuyên nghiệp, màn hình cảm ứng 7 inch, phù hợp kiến trúc/thiết kế.',
+      price: 2200000,
+      badge: 'Cao cấp'
+    },
+    {
+      id: 'r7', brand: 'toshiba', brandLabel: 'Toshiba',
+      name: 'Toshiba e-Studio 2518A',
+      specs: 'A3 Màu &middot; 25 trang/phút &middot; In/Scan/Copy/Fax',
+      desc: 'Đa chức năng 4-in-1, in màu sắc nét, phù hợp văn phòng cần in ấn đa dạng.',
+      price: 1500000,
+      badge: null
+    },
+    {
+      id: 'r8', brand: 'toshiba', brandLabel: 'Toshiba',
+      name: 'Toshiba e-Studio 3018A',
+      specs: 'A3 &middot; 30 trang/phút &middot; Khổ in lớn',
+      desc: 'Tốc độ 30 trang/phút, phù hợp văn phòng lớn hoặc trung tâm in ấn.',
+      price: 1800000,
+      badge: null
+    },
+    {
+      id: 'r9', brand: 'konica', brandLabel: 'Konica Minolta',
+      name: 'Konica Minolta bizhub 227',
+      specs: 'A3 &middot; 22 trang/phút &middot; Scan mạng',
+      desc: 'Scan thẳng về email/shared folder, giao diện đơn giản dễ dùng.',
+      price: 850000,
+      badge: null
+    },
+    {
+      id: 'r10', brand: 'konica', brandLabel: 'Konica Minolta',
+      name: 'Konica Minolta bizhub C250i',
+      specs: 'A3 Màu &middot; 25 trang/phút &middot; Cloud print',
+      desc: 'In màu chất lượng cao, hỗ trợ in từ điện thoại và Google Drive.',
+      price: 2500000,
+      badge: 'Cao cấp'
+    },
+  ];
+
+  // ── Filter state ──
+  let rentalBrand    = 'all';
+  let rentalMinPrice = 0;
+  let rentalMaxPrice = Infinity;
+  let rentalSearchQ  = '';
+
+  // ===================== HOTLINE =====================
+  const DEFAULT_PHONE = '0909123456';
+  let hotlinePhone = localStorage.getItem('tp_hotline') || DEFAULT_PHONE;
+
+  function fmtPhone(p) { return p.replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3'); }
+
+  function applyPhone(phone) {
+    const fmt = fmtPhone(phone);
+    ['topbar-phone','hdr-phone-text','footer-phone-num'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.textContent = fmt;
+    });
+    const hl = document.getElementById('hdr-phone-link'); if (hl) hl.href = 'tel:' + phone;
+    const fz = document.getElementById('float-zalo');     if (fz) fz.href = 'https://zalo.me/' + phone;
+    const fh = document.getElementById('float-hotline');  if (fh) fh.href = 'tel:' + phone;
+  }
+
+  // ===================== UTILITIES =====================
+  function fmtPrice(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + 'đ'; }
+
+  function normalizeVN(str) {
+    return (str || '').toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/đ/g, 'd').replace(/Đ/g, 'd');
+  }
+
+  // ===================== BRAND COLORS =====================
+  const BRAND_COLORS = {
+    ricoh:   '#2563eb',
+    canon:   '#dc2626',
+    kyocera: '#16a34a',
+    toshiba: '#7c3aed',
+    konica:  '#d97706',
+  };
+
+  // ===================== RENDER =====================
+  function renderRentalGrid(list) {
+    const grid  = document.getElementById('rentalGrid');
+    const noP   = document.getElementById('rentalNoProducts');
+    const count = document.getElementById('rentalCount');
+
+    grid.classList.add('grid-loading');
+
+    setTimeout(() => {
+      if (!list.length) {
+        grid.innerHTML = '';
+        noP.style.display = 'block';
+        grid.classList.remove('grid-loading');
+        count.textContent = 'Không tìm thấy máy phù hợp';
+        return;
+      }
+      noP.style.display = 'none';
+      count.textContent = `Hiển thị ${list.length} máy`;
+      const phone = localStorage.getItem('tp_hotline') || DEFAULT_PHONE;
+
+      grid.innerHTML = list.map((m, i) => {
+        const accent = BRAND_COLORS[m.brand] || '#64748b';
+        const badgeHtml = m.badge ? `<span class="rcard-badge">${m.badge}</span>` : '';
+        return `
+        <div class="rcard fade-up" style="--reveal-delay:${i * 0.06}s">
+          <div class="rcard-img" style="background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);">
+            ${badgeHtml}
+            <svg width="64" height="64" fill="none" stroke="${accent}" stroke-width="1.2" viewBox="0 0 24 24" opacity="0.6">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M8 4v4M16 4v4M2 10h20"/>
+              <circle cx="12" cy="15" r="1.5"/>
+            </svg>
+          </div>
+          <div class="rcard-body">
+            <p class="rcard-brand" style="color:${accent}">${m.brandLabel}</p>
+            <h3 class="rcard-model">${m.name}</h3>
+            <p class="rcard-desc">${m.specs} &mdash; ${m.desc}</p>
+            <div class="rcard-foot">
+              <p class="rcard-price">${fmtPrice(m.price)}<span>/tháng</span></p>
+              <a href="tel:${phone}" class="btn-rent-now">&#128222; Thuê ngay</a>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+
+      grid.classList.remove('grid-loading');
+      observeRevealItems();
+    }, 120);
+  }
+
+  // ===================== FILTER & SORT =====================
+  function rentalApplyFilters() {
+    let list = [...RENTAL_MACHINES];
+
+    if (rentalBrand !== 'all')    list = list.filter(m => m.brand === rentalBrand);
+    list = list.filter(m => m.price >= rentalMinPrice && m.price <= rentalMaxPrice);
+
+    if (rentalSearchQ) {
+      const q = normalizeVN(rentalSearchQ);
+      list = list.filter(m =>
+        normalizeVN(m.name).includes(q)        ||
+        normalizeVN(m.brandLabel).includes(q)  ||
+        normalizeVN(m.specs).includes(q)       ||
+        normalizeVN(m.desc).includes(q)
+      );
+    }
+
+    const sort = document.getElementById('rentalSort').value;
+    if (sort === 'price-asc')  list = [...list].sort((a, b) => a.price - b.price);
+    if (sort === 'price-desc') list = [...list].sort((a, b) => b.price - a.price);
+    if (sort === 'name')       list = [...list].sort((a, b) => a.name.localeCompare(b.name, 'vi'));
+
+    renderRentalGrid(list);
+  }
+
+  function rentalSetBrand(brand, btn) {
+    rentalBrand = brand;
+    document.querySelectorAll('.vpp-cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    rentalApplyFilters();
+  }
+
+  function rentalSetPrice(min, max, btn) {
+    rentalMinPrice = min;
+    rentalMaxPrice = max;
+    document.querySelectorAll('.vpp-price-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    rentalApplyFilters();
+  }
+
+  function rentalReset() {
+    rentalBrand = 'all'; rentalMinPrice = 0; rentalMaxPrice = Infinity; rentalSearchQ = '';
+    document.querySelectorAll('.vpp-cat-btn').forEach((b, i)   => b.classList.toggle('active', i === 0));
+    document.querySelectorAll('.vpp-price-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+    document.getElementById('rentalSort').value = 'default';
+    document.getElementById('searchInput').value = '';
+    rentalApplyFilters();
+  }
+
+  let _rentalSearchTimer = null;
+  function handleRentalSearch(val) {
+    rentalSearchQ = val.trim();
+    clearTimeout(_rentalSearchTimer);
+    _rentalSearchTimer = setTimeout(rentalApplyFilters, 280);
+  }
+
+  // ===================== MOBILE SIDEBAR TOGGLE =====================
+  function toggleRentalSidebar() {
+    document.getElementById('rentalSidebar').classList.toggle('open');
+    document.getElementById('rentalSidebarOverlay').classList.toggle('open');
+  }
+
+  // ===================== SCROLL REVEAL =====================
+  function observeRevealItems() {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up:not(.in-view)').forEach(el => obs.observe(el));
+  }
+
+  // ===================== INIT =====================
+  document.addEventListener('DOMContentLoaded', () => {
+    applyPhone(hotlinePhone);
+
+    // Đọc URL param ?brand=ricoh để pre-filter
+    const urlBrand = new URLSearchParams(window.location.search).get('brand');
+    const validBrands = ['ricoh','canon','kyocera','toshiba','konica'];
+    if (urlBrand && validBrands.includes(urlBrand)) {
+      rentalBrand = urlBrand;
+      const btn = document.querySelector(`.vpp-cat-btn[data-brand="${urlBrand}"]`);
+      if (btn) {
+        document.querySelectorAll('.vpp-cat-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+    }
+
+    rentalApplyFilters();
+    observeRevealItems();
+  });
+  </script>
+
+</body>
+</html>
